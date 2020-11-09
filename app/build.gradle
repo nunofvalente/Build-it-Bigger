@@ -50,11 +50,11 @@ android {
     productFlavors {
         paid {
             dimension "version"
-            applicationIdSuffix ".paid"
+            applicationId "com.nunovalente.android.builditbigger.paid"
         }
         free {
             dimension "version"
-            applicationIdSuffix ".free"
+            applicationId "com.nunovalente.android.builditbigger.free"
         }
     }
 
