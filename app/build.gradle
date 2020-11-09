@@ -13,6 +13,14 @@ plugins {
 apply plugin: 'com.google.cloud.tools.endpoints-framework-client'
 
 android {
+    signingConfigs {
+        nunofvalente {
+            keyAlias 'nunofvalente'
+            keyPassword '22011991'
+            storePassword '22011991'
+            storeFile file('C:\\Users\\nunov\\AndroidStudioProjects\\BuilditBigger\\keystore.jks')
+        }
+    }
     compileSdkVersion 30
 
     defaultConfig {
@@ -24,6 +32,7 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.nunofvalente
     }
 
     packagingOptions {
@@ -36,9 +45,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        paid {
+            dimension "version"
+            applicationId "com.nunovalente.android.builditbigger.paid"
+        }
+        free {
+            dimension "version"
+            applicationId "com.nunovalente.android.builditbigger.free"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 
@@ -51,12 +80,16 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
 
     //GCE
     implementation 'com.google.android.gms:play-services-ads:19.5.0'
+    androidTestImplementation 'junit:junit:4.13.1'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.google.api-client:google-api-client:1.30.11'
     implementation 'com.google.http-client:google-http-client-android:1.35.0'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
     implementation project(':jokeprovider')
     implementation project(':joker')

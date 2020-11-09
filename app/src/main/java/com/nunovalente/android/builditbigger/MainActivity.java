@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
 
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.nunovalente.android.jokeprovider.JokeProvider;
-import com.nunovalente.android.joker.JokerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openJokeActivity(View view) {
-        new EndpointsAsyncTask().execute(new Pair(this, JokeProvider.getJoke()));
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, JokeProvider.getJoke()));
     }
 }

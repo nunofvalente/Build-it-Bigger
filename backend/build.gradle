@@ -1,3 +1,6 @@
+// If you would like more information on the gradle-appengine-plugin please refer to the github page
+// https://github.com/GoogleCloudPlatform/gradle-appengine-plugin
+
 buildscript {
     repositories {
         jcenter()
@@ -17,11 +20,8 @@ apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
 apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
 
-
-java {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-}
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
     implementation 'com.google.endpoints:endpoints-framework:2.0.10'
@@ -34,3 +34,4 @@ dependencies {
 
 appengine.deploy.projectId = 'build-it-bigger-295115'
 appengine.deploy.projectId = 'GCLOUD_CONFIG'
+appengine.deploy.version = '1'
