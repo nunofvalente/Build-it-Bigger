@@ -29,7 +29,7 @@ public class MainActivityFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_activity, container, false);
 
-        if(getActivity() != null) {
+        if (getActivity() != null) {
 
             MobileAds.initialize(getActivity().getApplicationContext(), initializationStatus -> {
             });
@@ -51,9 +51,7 @@ public class MainActivityFragment extends Fragment {
             AdView mAdView = view.findViewById(R.id.adView);
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
-
         }
-
         return view;
     }
 }

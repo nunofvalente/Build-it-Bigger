@@ -35,6 +35,13 @@ android {
         signingConfig signingConfigs.nunofvalente
     }
 
+    configurations {
+        all {
+            exclude module: 'httpclient'
+            exclude module: 'commons-logging'
+        }
+    }
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
