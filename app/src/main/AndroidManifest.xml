@@ -14,9 +14,6 @@
         android:theme="@style/Theme.BuildItBigger"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8183412028753090~4338911129"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

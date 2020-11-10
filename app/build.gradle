@@ -91,13 +91,12 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.3.0'
 
     //GCE
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+    freeImplementation 'com.google.android.gms:play-services-ads:19.5.0'
     androidTestImplementation 'junit:junit:4.13.1'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.google.api-client:google-api-client:1.30.11'
     implementation 'com.google.http-client:google-http-client-android:1.35.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
-    implementation project(':jokeprovider')
     implementation project(':joker')
 }

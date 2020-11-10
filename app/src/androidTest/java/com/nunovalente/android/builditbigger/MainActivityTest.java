@@ -22,7 +22,7 @@ public class MainActivityTest {
 
     @Test
     public void verifyJoke() {
-        onView(withId(R.id.button_tell_joke)).perform(click());
+        onView(withId(R.id.button_show_joke)).perform(click());
 
         try {
             Thread.sleep(1000);
@@ -30,6 +30,7 @@ public class MainActivityTest {
             e.printStackTrace();
         }
 
+        //If Async fails it would return an empty string, if test passes means a joke was fetched with success
         onView(withId(R.id.tv_joke)).check(matches(not(withText(""))));
     }
 }

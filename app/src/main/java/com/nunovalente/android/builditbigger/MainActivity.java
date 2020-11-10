@@ -3,21 +3,10 @@ package com.nunovalente.android.builditbigger;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.nunovalente.android.jokeprovider.JokeProvider;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openJokeActivity(View view) {
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, JokeProvider.getJoke()));
-    }
-
-    public void showJoke(View view) {
-        String joke = JokeProvider.getJoke();
-        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
+        new EndpointsAsyncTask().execute(new Pair<>(this, "string"));
     }
 }
