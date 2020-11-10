@@ -1,4 +1,0 @@
-com/udacity/gradle/builditbigger/backend/Joke.java
- com.udacity.gradle.builditbigger.backend.Joke
-com/udacity/gradle/builditbigger/backend/MyEndpoint.java
- com.udacity.gradle.builditbigger.backend.MyEndpoint
